@@ -1,0 +1,36 @@
+<div class="navbar navbar-default navbar-fixed-bottom" ng-controller="TabBarController">
+  <ul class="navlist">
+    <li ng-class="{active:items[1].page==page}" ng-click="changeTab(items[1])">
+      <a href="/#!/library">
+        <p><img src="images/nav1.png" alt=""></p>
+        <p>图书馆</p>
+      </a>
+    </li>
+    <li ng-class="{active:items[2].page==page}" ng-click="changeTab(items[2])">
+      <a href="/#!/paihang">
+        <p><img src="images/nav2.png" alt=""></p>
+        <p>排行榜</p>
+      </a>
+    </li>
+    <li ng-class="{active:items[3].page==page}" ng-click="changeTab(items[3])">
+      <a href="/#!/mycenter">
+        <p><img src="images/nav3.png" alt=""></p>
+        <p>我</p>
+      </a>
+    </li>
+  </ul>
+</div><!--E .navbar-->
+
+<!-- add thirdparty js -->
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/zui.min.js"></script>
+
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+
+<script type="text/javascript" src="/module/tabbar/tabbar.client.module.js"></script>
+<script type="text/javascript" src="/module/tabbar/config/tabbar.client.routes.js"></script>
+<script type="text/javascript" src="/module/tabbar/controllers/tabbar.client.controller.js"></script>
+
+
+<script type="text/javascript" src="/application.js"></script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+     <head>
+       <title><%= title %></title>
+     </head>
+     <body>
+       <div ng-show="!showActions" ng-swipe-left="showActions = true">
+          <a ng-click="count = count + 1" ng-init="count=0" href="javascript:void(0)">
+          <img src="img/logo.png" alt="Logo">
+          </a>
+          count: {{ count }}
+       
+          <section ng-view></section>
+       
+
+          <script type="text/javascript" src="/lib/angular/angular.js"></script>
+          <script type="text/javascript" src="/lib/angular-touch/angular-touch.js"></script>
+          <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+          <script type="text/javascript" src="/example/example.client.module.js"></script>
+          <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+          <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
+          <script type="text/javascript" src="/application.js"></script>
+        </div> 
+        <div ng-show="showActions" ng-swipe-right="showActions = false">
+          <button ng-click="reply()">Reply</button>
+          <button ng-click="delete()">Delete</button>
+        </div>       
+     </body>
+</html>
+

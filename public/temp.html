@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div ng-app ng-controller="tabController" class="wrapper">
+    <ul class="clearfix">
+        <li ng-repeat="item in items" ng-class="{active:item.name==page}" ng-click="tabChange(item)">{{item.name}}</li>
+    </ul>
+    <div id="mainView" ng-switch on="page">
+        <div ng-switch-when="Cutman">
+            <a href="http://www.flickr.com/photos/deathhell/6861320435/"><img src="http://farm8.staticflickr.com/7205/6861320435_87faa1786a.jpg" width="500" height="500" alt="Cutman"></a>
+        </div>
+        <div ng-switch-when="Iceman">
+            <a href="http://www.flickr.com/photos/deathhell/6861320569/" ><img src="http://farm8.staticflickr.com/7038/6861320569_36165752d5.jpg" width="500" height="500" alt="Iceman"></a>
+        </div>
+        <div ng-switch-when="Fireman">
+            <a href="http://www.flickr.com/photos/deathhell/6861320811/" ><img src="http://farm8.staticflickr.com/7064/6861320811_c9343a33e2.jpg" width="500" height="500" alt="Fireman"></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+function tabController($scope){
+$scope.page = 'Cutman';
+$scope.items = [{name:'Cutman'}, {name:'Iceman'}, {name:'Fireman'}];
+
+$scope.tabChange=function(item){
+$scope.page = item.name;
+}
+}
